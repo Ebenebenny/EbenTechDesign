@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EbenTech and Designs — Portfolio</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --accent: #0d6efd; /* change to your brand color */
+        --muted: #6c757d;
+      }
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        scroll-behavior: smooth;
+        background-color: #f3f3f3;
+      }
+
+      /* Header / Navbar tweaks */
+      .navbar-brand img {
+        height: 42px;
+        width: auto;
+      }
+
+      /* Hero slider content */
+      .carousel-caption {
+        bottom: 30%;
+        transform: translateY(10%);
+      }
+      .hero-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+      }
+      .hero-sub {
+        font-size: 1.05rem;
+        color: var(--muted);
+      }
+
+      /* Section reveal animations */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px) scale(0.995);
+        transition: all 600ms cubic-bezier(0.2, 0.9, 0.2, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* Grid cards */
+      .feature-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 24px rgba(13, 110, 253, 0.06);
+        background: #fff;
+      }
+      .feature-card .thumb {
+        height: 120px;
+        object-fit: cover;
+        width: 100%;
+        display: block;
+      }
+      .feature-card .card-body {
+        padding: 1rem;
+      }
+
+      /* Achievements counters */
+      .stat {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .stat-label {
+        color: var(--muted);
+      }
+
+      /* Contact form */
+      .contact-card {
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      }
+
+      footer {
+        background: #0f1724;
+        color: #e6eef8;
+      }
+      .social a {
+        color: inherit;
+        margin-right: 12px;
+        font-size: 1.25rem;
+      }
+
+      /* Responsive fine tuning */
+      @media (min-width: 1200px) {
+        .hero-title {
+          font-size: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header / Navbar -->
+    <header class="sticky-top bg-white shadow-sm">
+      <nav class="navbar navbar-expand-lg container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <!-- small svg logo -->
+          <img src="ben_logo.png" alt="EbenTech logo" loading="lazy" />
+          <span class="ms-2 fw-bold">EbenTech &amp; Designs</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#achievements">Achievements</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- section 1 -->
+    <section id="home" class="pt-0">
+      <div
+        id="heroCarousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+        data-bs-interval="5000"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1300&auto=format&fit=crop"
+              alt="developer desk"
+              style="height: 500px; width: 100%"
+            />
+            <div class="carousel-caption text-center">
+              <h1 class="hero-title">
+                Hi — I'm <span style="color: var(--tertiary)">Eben</span>, a Web
+                Developer
+              </h1>
+              <p class="hero-sub">
+                I build modern, responsive websites and web apps that convert
+                visitors into customers.
+              </p>
+              <p>
+                <a class="btn btn-warning btn-lg" href="#portfolio"
+                  >See my work</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1300&auto=format&fit=crop"
+              alt="coding laptop"
+              style="height: 500px; width: 100%"
+            />
+            <div class="carousel-caption text-center">
+              <h1 class="hero-title">
+                Crafting fast, accessible user experiences
+              </h1>
+              <p class="hero-sub">
+                Performance, SEO, and accessibility are baked into everything I
+                deliver.
+              </p>
+              <p>
+                <a class="btn btn-tertiary btn-lg btn-warning" href="#contact"
+                  >Hire me</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1920&auto=format&fit=crop"
+              alt="design mockup"
+              style="height: 500px; width: 100%"
+            />
+            <div class="carousel-caption text-center">
+              <h1 class="hero-title">Design-led development</h1>
+              <p class="hero-sub">
+                I translate product goals into beautiful designs and solid code
+                — from concept to launch.
+              </p>
+              <p>
+                <a class="btn btn-warning btn-lg" href="#portfolio"
+                  >View portfolio</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Section 2: Fancy Grid (4 columns x 2 rows) -->
+    <section id="portfolio" class="py-5">
+      <div class="container">
+        <h2 class="mb-4 text-center">Why work with EbenTech</h2>
+        <div class="row g-4">
+          <!-- Eight feature cards -> 4 columns on lg, 2 on md, 1 on sm -->
+          <!-- Repeatable card -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="feature-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop&s=placeholder"
+                class="thumb"
+                alt="speed"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5>Performance-first</h5>
+                <p class="mb-0">
+                  Fast-loading sites that keep users engaged and improve SEO.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="feature-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop&s=placeholder"
+                class="thumb"
+                alt="responsive"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5>Responsive Design</h5>
+                <p class="mb-0">
+                  Beautiful layouts that adapt to any screen — mobile-first
+                  mindset.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="feature-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop&s=placeholder"
+                class="thumb"
+                alt="accessible"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5>Accessible</h5>
+                <p class="mb-0">
+                  I follow web standards so everyone can use your product.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="feature-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop&s=placeholder"
+                class="thumb"
+                alt="clean code"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5>Clean Code</h5>
+                <p class="mb-0">
+                  Maintainable, well-tested code so your product can scale.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="feature-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop&s=placeholder"
+                class="thumb"
+                alt="api"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5>API Integrations</h5>
+                <p class="mb-0">
+                  Seamless integrations with payment gateways, maps, and more.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="feature-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop&s=placeholder"
+                class="thumb"
+                alt="ui/ux"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5>UI/UX Focused</h5>
+                <p class="mb-0">
+                  Design patterns that convert visitors into customers.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="feature-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1920&auto=format&fit=crop"
+                class="thumb"
+                alt="support"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5>Support</h5>
+                <p class="mb-0">
+                  Post-launch support and iterative improvements.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="feature-card reveal">
+              <img
+                src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1920&auto=format&fit=crop"
+                class="thumb"
+                alt="results"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5>Results-driven</h5>
+                <p class="mb-0">
+                  Measurable improvements: page speed, conversions, engagement.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Achievements -->
+    <section id="achievements" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="mb-4 text-center">Achievements</h2>
+        <div class="row text-center g-4">
+          <div class="col-6 col-md-3 reveal">
+            <div class="p-4 bg-light rounded shadow-sm">
+              <div class="stat text-warning" data-target="124">0</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 reveal">
+            <div class="p-4 bg-light rounded shadow-sm">
+              <div class="stat text-warning" data-target="89">0</div>
+              <div class="stat-label">Projects Delivered</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 reveal">
+            <div class="p-4 bg-light rounded shadow-sm">
+              <div class="stat text-warning" data-target="12">0</div>
+              <div class="stat-label">Projects in Progress</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 reveal">
+            <div class="p-4 bg-light rounded shadow-sm">
+              <div class="stat text-warning" data-target="4">0</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: About + Contact Form -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6 reveal">
+            <h2>About EbenTech</h2>
+            <p>
+              I am a web developer specialising in building production-ready web
+              applications and beautiful websites. My focus is on performance,
+              accessibility, and reliable code. EbenTech &amp; Designs helps
+              startups and businesses ship great web experiences.
+            </p>
+
+            <ul class="list-unstyled">
+              <li>
+                <strong>Phone:</strong>
+                <a href="tel:+2347032478911">+2347032478911</a>
+              </li>
+              <li>
+                <strong>Email:</strong>
+                <a href="ebenTech@web.dev">ebentech@web.dev</a>
+              </li>
+              <li><strong>Location:</strong> Ado-Ekiti, Nigeria</li>
+            </ul>
+          </div>
+
+          <div class="col-md-6 reveal">
+            <div class="card contact-card p-3">
+              <div class="card-body">
+                <h5>Get in touch</h5>
+                <form id="contactForm" novalidate>
+                  <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <button type="submit" class="btn btn-warning">
+                      Send message
+                    </button>
+                    <small class="text-muted"
+                      >We'll reply within 48 hours</small
+                    >
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Footer with social links -->
+    <footer class="py-4">
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between align-items-center"
+      >
+        <div class="mb-3 mb-md-0">
+          <strong>EbenTech &amp; Designs</strong> © <span id="year"></span>
+        </div>
+        <div class="social">
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS & helpers -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Set year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // IntersectionObserver for reveal animations and lazy effects
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              // animate counters when stat enters view
+              if (
+                entry.target.querySelectorAll &&
+                entry.target.querySelectorAll(".stat").length
+              ) {
+                entry.target.querySelectorAll(".stat").forEach(animateCounter);
+              }
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+      document
+        .querySelectorAll("#achievements .stat")
+        .forEach((el) => observer.observe(el.parentElement));
+
+      // Counter animation
+      function animateCounter(el) {
+        const to =
+          parseInt(el.getAttribute("data-target") || el.textContent, 10) || 0;
+        const duration = 1200;
+        const start = 0;
+        const startTime = performance.now();
+        function step(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const value = Math.floor(progress * (to - start) + start);
+          el.textContent = value;
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = to;
+        }
+        requestAnimationFrame(step);
+      }
+
+      // Contact form (client-side only) - replace with real endpoint as needed
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const message = document.getElementById("message").value.trim();
+          if (!name || !email || !message) {
+            alert("Please fill all fields.");
+            return;
+          }
+          // Simulated success
+          alert("Thanks, " + name + "! Your message has been sent (demo).");
+          this.reset();
+        });
+
+      // Smooth reveal for carousel captions on slide
+      const carouselEl = document.querySelector("#heroCarousel");
+      if (carouselEl) {
+        carouselEl.addEventListener("slid.bs.carousel", () => {
+          document.querySelectorAll(".carousel-caption").forEach((c) => {
+            c.classList.add("reveal");
+            setTimeout(() => c.classList.add("visible"), 50);
+          });
+        });
+      }
+
+      // Lazy-loading images enhancement: if IntersectionObserver supported, swap data-src to src (progressive)
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      if ("IntersectionObserver" in window) {
+        const imgObserver = new IntersectionObserver(
+          (entries, io) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                // nothing special to do because we used direct src; this is placeholder for advanced lazy logic
+                img.classList.add("visible");
+                io.unobserve(img);
+              }
+            });
+          },
+          { rootMargin: "200px" }
+        );
+        lazyImages.forEach((img) => imgObserver.observe(img));
+      }
+
+      // Small accessibility: close navbar on click on mobile
+      document.querySelectorAll(".navbar-nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          const collapseEl = document.querySelector(".navbar-collapse");
+          if (collapseEl.classList.contains("show")) {
+            new bootstrap.Collapse(collapseEl).toggle();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
