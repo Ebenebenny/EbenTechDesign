@@ -101,11 +101,42 @@
         margin-right: 12px;
         font-size: 1.25rem;
       }
+      .nav-item {
+        position: relative;
+      }
+      /* .card {
+        box-shadow: 1px 1px 5px 2px gray;
+      } */
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 10%;
+        left: 10%;
+        width: 50px;
+        height: 2px;
+        margin-left: 2px;
+        background-color: rgb(128, 128, 124);
+        display: none;
+        transition: all 0.5s ease-in;
+      }
 
+      .nav-item:hover .nav-link::after {
+        display: block;
+      }
+
+      #company_name {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
       /* Responsive fine tuning */
       @media (min-width: 1200px) {
         .hero-title {
           font-size: 3rem;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        #company_name {
+          display: none;
         }
       }
     </style>
@@ -117,7 +148,9 @@
         <a class="navbar-brand d-flex align-items-center" href="#">
           <!-- small svg logo -->
           <img src="ben_logo.png" alt="EbenTech logo" loading="lazy" />
-          <span class="ms-2 fw-bold">EbenTech &amp; Designs</span>
+          <span id="company_name" class="ms-2 fw-bold"
+            >EbenTech &amp; Designs</span
+          >
         </a>
         <button
           class="navbar-toggler"
@@ -136,9 +169,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#portfolio">Portfolio</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#achievements">Achievements</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
             </li>
@@ -397,26 +428,127 @@
         <div class="row text-center g-4">
           <div class="col-6 col-md-3 reveal">
             <div class="p-4 bg-light rounded shadow-sm">
-              <div class="stat text-warning" data-target="124">0</div>
+              <div class="stat text-warning" data-target="17">0</div>
               <div class="stat-label">Happy Clients</div>
             </div>
           </div>
           <div class="col-6 col-md-3 reveal">
             <div class="p-4 bg-light rounded shadow-sm">
-              <div class="stat text-warning" data-target="89">0</div>
+              <div class="stat text-warning" data-target="12">0</div>
               <div class="stat-label">Projects Delivered</div>
             </div>
           </div>
           <div class="col-6 col-md-3 reveal">
             <div class="p-4 bg-light rounded shadow-sm">
-              <div class="stat text-warning" data-target="12">0</div>
+              <div class="stat text-warning" data-target="4">0</div>
               <div class="stat-label">Projects in Progress</div>
             </div>
           </div>
           <div class="col-6 col-md-3 reveal">
             <div class="p-4 bg-light rounded shadow-sm">
-              <div class="stat text-warning" data-target="4">0</div>
+              <div class="stat text-warning" data-target="7">0</div>
               <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 reveal">
+            <div class="p-4 bg-light rounded shadow-sm">
+              <div class="stat text-warning" data-target="18">0</div>
+              <div class="stat-label">Student</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Testimonials -->
+    <section id="testimonials" class="py-5">
+      <div class="container">
+        <h2 class="mb-5 text-center bg-dark-subtle p-3 rounded-2">
+          Clients and Students Testimonies
+        </h2>
+        <div class="row g-4">
+          <!-- Testimonial 1 -->
+          <div class="col-12 col-md-6 col-lg-4 reveal">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="client"
+                  class="rounded-circle mb-3"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <h6 class="fw-bold">John Ade</h6>
+                <small class="text-muted d-block mb-2">Student (Web Dev)</small>
+                <p class="mb-0 bg-dark text-light rounded-4">
+                  EbenTech made learning web development so easy. His teaching
+                  style is practical, clear, and very engaging!
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="col-12 col-md-6 col-lg-4 reveal">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/45.jpg"
+                  alt="client"
+                  class="rounded-circle mb-3"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <h6 class="fw-bold">Olarewaju Tunbosun</h6>
+                <small class="text-muted d-block mb-2">Business Owner</small>
+                <p class="mb-0 bg-success text-light rounded-4">
+                  My website was delivered faster than I expected. The design is
+                  responsive and my sales improved!
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="col-12 col-md-6 col-lg-4 reveal">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/men/12.jpg"
+                  alt="client"
+                  class="rounded-circle mb-3"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <h6 class="fw-bold">Chinedu Okafor</h6>
+                <small class="text-muted d-block mb-2">Project Manager</small>
+                <p class="mb-0 bg-dark text-light rounded-4">
+                  Professional and reliable. EbenTech handled our project with
+                  so much creativity and technical expertise.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 4 -->
+          <div class="col-12 col-md-6 col-lg-4 reveal">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/28.jpg"
+                  alt="client"
+                  class="rounded-circle mb-3"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <h6 class="fw-bold">Ogunniyi Kayode</h6>
+                <small class="text-muted d-block mb-2">Tech Entrepreneur</small>
+                <p class="mb-0 bg-success text-light rounded-4">
+                  EbenTech redesigned my platform and it has been an incredible
+                  experience. Highly recommended!
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -427,13 +559,14 @@
     <section id="about" class="py-5">
       <div class="container">
         <div class="row g-4 align-items-center">
-          <div class="col-md-6 reveal">
+          <div class="col-md-6 reveal bg-info p-4 rounded">
             <h2>About EbenTech</h2>
             <p>
               I am a web developer specialising in building production-ready web
-              applications and beautiful websites. My focus is on performance,
-              accessibility, and reliable code. EbenTech &amp; Designs helps
-              startups and businesses ship great web experiences.
+              applications and beautiful websites and a teacher. My focus is on
+              performance, accessibility, and reliable code. EbenTech &amp;
+              Designs helps startups and businesses ship great web experiences
+              and also impact this knowledge to the young tech enthusiast.
             </p>
 
             <ul class="list-unstyled">
